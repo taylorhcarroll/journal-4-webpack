@@ -1,24 +1,165 @@
 {
-  "posts": [
+  "journalArray": [
+    {
+      "date": "2019-09-09",
+      "moodId": "5",
+      "concept": "hello",
+      "content": "wow gee willikers",
+      "id": 3
+    },
+    {
+      "date": "2019-09-09",
+      "moodId": "4",
+      "concept": "testing DOM stuff",
+      "content": "yep",
+      "id": 4
+    },
+    {
+      "date": "2019-09-02",
+      "moodId": "3",
+      "concept": "testing out stuff",
+      "content": " why does the mood not populate?",
+      "id": 5
+    },
+    {
+      "date": "2019-09-02",
+      "moodId": "2",
+      "concept": "testing out stuff",
+      "content": " why does the mood not populate?",
+      "id": 6
+    },
+    {
+      "date": "2019-09-18",
+      "moodId": "1",
+      "concept": "reverted ",
+      "content": "revert emotions ",
+      "id": 9
+    },
+    {
+      "date": "2019-09-19",
+      "moodId": "3",
+      "concept": "the field stop populating",
+      "content": "again ",
+      "id": 10
+    },
+    {
+      "date": "2019-09-20",
+      "moodId": "12",
+      "concept": "testing POST",
+      "content": "testing POST ",
+      "id": 11
+    },
+    {
+      "date": "2019-09-16",
+      "moodId": "13",
+      "concept": "testing submit",
+      "content": "test submit of moodId ",
+      "id": 12
+    },
+    {
+      "date": "2019-09-20",
+      "moodId": "18",
+      "concept": "testing filtering ",
+      "content": " testing filtering ",
+      "id": 14
+    }
+  ],
+  "moods": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "name": "JOY"
     },
     {
       "id": 2,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "name": "FEAR"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 3,
+      "name": "ANGER"
+    },
+    {
+      "id": 4,
+      "name": "FRUSTRATION"
+    },
+    {
+      "id": 5,
+      "name": "ACCEPTANCE"
+    },
+    {
+      "id": 6,
+      "name": "EXCITEMENT"
+    },
+    {
+      "id": 7,
+      "name": "CONFUSION"
+    },
+    {
+      "id": 8,
+      "name": "CURIOSITY"
+    },
+    {
+      "id": 9,
+      "name": "SURPRISE"
+    },
+    {
+      "id": 10,
+      "name": "DETERMINATION"
+    },
+    {
+      "id": 11,
+      "name": "HOPE"
+    },
+    {
+      "id": 12,
+      "name": "ANXIETY"
+    },
+    {
+      "id": 13,
+      "name": "LOVE"
+    },
+    {
+      "id": 14,
+      "name": "SADNESS"
+    },
+    {
+      "id": 15,
+      "name": "WONDER"
+    },
+    {
+      "id": 16,
+      "name": "REJUVENATED"
+    },
+    {
+      "id": 17,
+      "name": "DRAINED"
+    },
+    {
+      "id": 18,
+      "name": "CONFIDENT"
+    },
+    {
+      "id": 19,
+      "name": "AMUSED"
+    },
+    {
+      "id": 20,
+      "name": "GUILTY"
+    },
+    {
+      "id": 21,
+      "name": "RELIEVED"
+    },
+    {
+      "id": 22,
+      "name": "INDIFFERENCE"
+    },
+    {
+      "id": 23,
+      "name": "GUCCI"
+    },
+    {
+      "id": 24,
+      "name": "PUMPED"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
