@@ -9,7 +9,7 @@ console.log("If you can see this your journal JS file is properly linked.")
 dropdown.moodDropdown();
 //dynamically generates the formHTML
 injectDOM.addFormToDom();
-//this makes sure we have journal entries on the page when it loads  
+//this makes sure we have journal entries on the page when it loads//
 API.getJournalEntries().then(data => injectDOM.addToDom(data));
 
 //add event listener for submit button
@@ -37,7 +37,7 @@ document.querySelector("#saveButton")
     				date: dateInput,
     				moodId: moodInput,
     				concept: conceptsInput,
-                    content: entryInput 
+                    content: entryInput
                 }
             console.log(completedForm)
             API.saveJournalEntry(completedForm)
@@ -62,10 +62,9 @@ const resultsContainer =  document.querySelector("#entryLog").addEventListener("
             .then(() => {
                 //clear entryLog then populate with current db//
                 API.getJournalEntries().then(data => injectDOM.addToDom(data));
-                
             })
-//otherwise if you see an edit button, replace the form with an edit form// 
-//you need to refactor this into a .then statment like above, 
+//otherwise if you see an edit button, replace the form with an edit form//
+//you need to refactor this into a .then statment like above,
 //also consider populating a modal instead//
     } else if (event.target.id.startsWith("editEntry")) {
         console.log("edit", event.target.id.split("--")[1])
@@ -77,7 +76,6 @@ const resultsContainer =  document.querySelector("#entryLog").addEventListener("
         editContainer.scrollIntoView();
         dropdown.moodDropdown().then(() => editFormFields(entryIdtoEdit))
         API.getJournalEntries().then(data => injectDOM.addToDom(data));
-           
     }
 })
 
@@ -87,7 +85,7 @@ const editFormFields  = entryIdtoEdit => {
     let moodInput = document.querySelector("#eMood")
     let conceptsInput = document.querySelector("#econcept")
     let entryInput = document.querySelector("#econtent")
-    
+    //
     API.getSpecificEntry(entryIdtoEdit).then(entry => {
         console.log(entry)
         hiddenId.value = entry.id;
@@ -109,7 +107,7 @@ document.querySelector("#editSaveButton").addEventListener("click", event => {
             .then(() => {
                 dropdown.moodDropdown();
                 injectDOM.addFormToDom();
-                API.getJournalEntries().then(data => injectDOM.addToDom(data));    
+                API.getJournalEntries().then(data => injectDOM.addToDom(data));
         })
     }
 )

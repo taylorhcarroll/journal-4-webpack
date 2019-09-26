@@ -4,17 +4,17 @@ console.log("If you can see this your data JS file is properly linked.")
 //function to push input to database.json//
 const API = {
     getMoods: () => {
-        return fetch("http://localhost:8088/moods")
+        return fetch("http://localhost:3000/moods")
             .then(response => response.json())
     },
     getJournalEntries: () => {
-        return fetch("http://localhost:8088/journalArray?_sort=date&_order=desc&_expand=mood")
+        return fetch("http://localhost:3000/journalArray?_sort=date&_order=desc&_expand=mood")
             .then(response =>
                 response.json()
             );
     },
     saveJournalEntry: entry => {
-        return fetch("http://localhost:8088/journalArray", {
+        return fetch("http://localhost:3000/journalArray", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -23,15 +23,15 @@ const API = {
         });
     },
     deleteEntry: (id) => {
-        return fetch(`http://localhost:8088/journalArray/${id}`, {
+        return fetch(`http://localhost:3000/journalArray/${id}`, {
             method: "DELETE"
         }).then(response => response.json())
     },
     editEntry: (id) => {
         const entryUpdateObj = {
-            name: document.querySelector("#entryName").value
+            // name: document.querySelector("#entryName").value
         }
-        return fetch(`http://localhost:8088/journalArray/${id}`, {
+        return fetch(`http://localhost:3000/journalArray/${id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
@@ -40,7 +40,7 @@ const API = {
         }).then(response => response.json())
     },
     getSpecificEntry: (id) => {
-        return fetch(`http://localhost:8088/journalArray/${id}`)
+        return fetch(`http://localhost:3000/journalArray/${id}`)
             .then(response => response.json())
     }
 };

@@ -33,10 +33,9 @@ const webComponent = {
                  <select type="text" name="journalMood" id="mood">
                           <optgroup id="mood-Input">
                              <option disabled value="default">Select Your Mood</option>
-                          </optgroup> 
-                 </select> 
+                          </optgroup>
+                 </select>
            </fieldset>
-           
            <button class="button" id="saveButton" type="Button">Submit</button>
         </article>
         </form>`
@@ -63,8 +62,8 @@ const webComponent = {
                  <select type="text" name="journalMood" id="eMood">
                           <optgroup id="mood-Input">
                              <option disabled value="default">Select Your Mood</option>
-                          </optgroup> 
-                 </select> 
+                          </optgroup>
+                 </select>
            </fieldset>
            <button class="button" id="editSaveButton" type="Button">Save Changes</button>
         </article>
@@ -76,8 +75,8 @@ const webComponent = {
                  <select type="text" name="journalMood" id="eMood">
                           <optgroup id="mood-Input">
                              <option disabled value="default">Select Your Mood</option>
-                          </optgroup> 
-                 </select> 
+                          </optgroup>
+                 </select>
              </fieldset>`
     }
 };
@@ -105,8 +104,8 @@ export default webComponent;
 //                   <select type="text" name="journalMood" id="mood">
 //                            <optgroup id="mood-Input">
 //                               <option disabled value="default">Select Your Mood</option>
-//                            </optgroup> 
-//                   </select> 
+//                            </optgroup>
+//                   </select>
 //             </fieldset>
 //             <button class="button" id="saveButton" type="Button">Submit</button>
 //             `
