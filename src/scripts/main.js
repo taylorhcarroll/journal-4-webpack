@@ -3,6 +3,7 @@ import injectDOM from "./entriesDOM.js";
 import dropdown from "./moodDropDown.js";
 import webComponent from "./entryComponent.js";
 import validateInputString from "./inputValidator.js";
+import editEventListener from "./editEventListener.js";
 
 console.log("If you can see this your journal JS file is properly linked.")
 //makes the mood dropdown
@@ -67,6 +68,7 @@ const resultsContainer =  document.querySelector("#entryLog").addEventListener("
 //you need to refactor this into a .then statment like above,
 //also consider populating a modal instead//
     } else if (event.target.id.startsWith("editEntry")) {
+        console.log("edit save button is called")
         console.log("edit", event.target.id.split("--")[1])
         const formContainer = document.querySelector("#journalForm");
         formContainer.innerHTML = "";
@@ -75,10 +77,10 @@ const resultsContainer =  document.querySelector("#entryLog").addEventListener("
         const editContainer = document.querySelector("#journalForm")
         editContainer.scrollIntoView();
         dropdown.moodDropdown().then(() => editFormFields(entryIdtoEdit))
-        API.getJournalEntries().then(data => injectDOM.addToDom(data));
+        // API.getJournalEntries().then(data => injectDOM.addToDom(data));
     }
 })
-
+//meant to populate the form fields//
 const editFormFields  = entryIdtoEdit => {
     let hiddenId = document.querySelector("#entryId")
     let dateInput = document.querySelector("#edate")
@@ -94,20 +96,9 @@ const editFormFields  = entryIdtoEdit => {
         conceptsInput.value = entry.concept;
         entryInput.value = entry.content;
         console.log("entry.moodId is:" + entry.moodId)
-})}
-
-//this is going to PATCH your edits to the JSON db//
-
-document.querySelector("#editSaveButton").addEventListener("click", event => {
-    console.log("edit button is called")
-    const hiddenId = document.querySelector("#entryId").value;
-        document.querySelector("#entryLog").innerHTML = "";
-        document.querySelector("#journalForm").innerHTML = "";
-        API.editEntry(hiddenId)
-            .then(() => {
-                dropdown.moodDropdown();
-                injectDOM.addFormToDom();
-                API.getJournalEntries().then(data => injectDOM.addToDom(data));
-        })
-    }
-)
+        return entry
+})
+.then(entry => {
+    document.querySelector("#editSaveButton").addEventListener("click", function() {editEventListener.savetoJson(entry)})
+})
+}

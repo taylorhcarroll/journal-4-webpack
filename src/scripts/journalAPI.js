@@ -27,12 +27,12 @@ const API = {
             method: "DELETE"
         }).then(response => response.json())
     },
-    editEntry: (id) => {
-        const entryUpdateObj = {
-            // name: document.querySelector("#entryName").value
-        }
+    editEntry: (id, entryUpdateObj) => {
+        // const entryUpdateObj = {
+        //     // name: document.querySelector("#entryName").value
+        // }
         return fetch(`http://localhost:3000/journalArray/${id}`, {
-            method: "PATCH",
+            method: "PUT",
             headers: {
                 "Content-Type": "application/json"
             },
